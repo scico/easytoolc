@@ -16,7 +16,7 @@ baseurl=http://repo.scico.io/bdw/centos/7.5.1804/os/x86_64 \n\
 enabled=yes \n\
 gpgcheck=0" > /etc/yum.repos.d/easyrepo.repo
 
-RUN yum -y update && yum -y install foss-2018b  && yum clean all && chown -R apps.apps /opt/apps
+RUN yum -y update && yum -y install foss-2018a  && yum clean all && chown -R apps.apps /opt/apps
 
 USER apps
 
