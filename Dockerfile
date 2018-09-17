@@ -14,9 +14,10 @@ RUN echo -e " \n\
 name=EasyBuild repo \n\
 baseurl=http://repo.scico.io/bdw/centos/7.5.1804/os/x86_64 \n\
 enabled=yes \n\
-gpgcheck=0" > /etc/yum.repos.d/easyrepo.repo
+gpgcheck=1" > /etc/yum.repos.d/easyrepo.repo
 
-RUN yum -y update && yum -y install foss-2018a  && yum clean all && chown -R apps.apps /opt/apps
+RUN yum -y update && rpm --import http://repo.scico.io/key/RPM-GPG-KEY-scico-io &&\
+    yum -y install foss-2018a  && yum clean all && chown -R apps.apps /opt/apps
 
 USER apps
 
