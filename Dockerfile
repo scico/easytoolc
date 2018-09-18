@@ -16,7 +16,7 @@ baseurl=http://repo.scico.io/bdw/centos/7.5.1804/os/x86_64 \n\
 enabled=yes \n\
 gpgcheck=1" > /etc/yum.repos.d/easyrepo.repo
 
-RUN yum -y update && rpm --import http://repo.scico.io/key/RPM-GPG-KEY-scico-io &&\
+RUN yum -y update && rpm --import http://repo.scico.io/key/RPM-GPG-KEY-melwyn &&\
     yum -y install foss-2018a  && yum clean all && chown -R apps.apps /opt/apps
 
 USER apps
